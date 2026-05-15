@@ -24,6 +24,11 @@ mkdir -p "$AGENT_TARGET" "$CONTEXT_TARGET/concepts" "$CONTEXT_TARGET/guides" "$C
 echo "[2/5] Installing agent..."
 cp "$KS_DIR/agent/knowledge-synthesizer.md" "$AGENT_TARGET/" && echo "  Agent installed" || echo "  [WARNING] Agent copy failed"
 
+# Step 2.5: Install subagent file
+echo "[2.5/5] Installing subagent..."
+mkdir -p "$OPENCODE_DIR/agent/subagents/knowledge"
+cp "$KS_DIR/agent/subagents/knowledge-synthesizer.md" "$OPENCODE_DIR/agent/subagents/knowledge/" && echo "  Subagent installed"
+
 # Step 3: Install command file
 echo "[3/5] Installing command..."
 cp "$KS_DIR/command/knowledge.md" "$COMMAND_TARGET/" && echo "  Command installed" || echo "  [WARNING] Command copy failed"

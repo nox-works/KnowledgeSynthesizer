@@ -35,6 +35,11 @@ echo [2/5] Installing agent file...
 copy /Y "%KS_DIR%agent\knowledge-synthesizer.md" "%AGENT_TARGET%\" >nul 2>&1
 if %errorlevel% equ 0 (echo   Agent installed) else (echo   [WARNING] Agent copy failed)
 
+REM --- Step 2.5: Install subagent file ---
+if not exist "%OPENCODE_DIR%\agent\subagents\knowledge" mkdir "%OPENCODE_DIR%\agent\subagents\knowledge"
+copy /Y "%KS_DIR%agent\subagents\knowledge-synthesizer.md" "%OPENCODE_DIR%\agent\subagents\knowledge\" >nul 2>&1
+echo   Subagent installed.
+
 REM --- Step 3: Install command file ---
 echo [3/5] Installing command file...
 copy /Y "%KS_DIR%command\knowledge.md" "%COMMAND_TARGET%\" >nul 2>&1
