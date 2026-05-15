@@ -1,5 +1,5 @@
 ---
-description: "Summon KnowledgeSynthesizer — research-grade, multi-depth knowledge on ANY topic: from one-paragraph explanation to full compendium. Supports depth, perspective, and format variance."
+description: "Summon KnowledgeSynthesizer — research-grade, multi-depth knowledge on ANY topic: from one-paragraph explanation to course-production-grade curricula and full compendiums. Supports depth, perspective, and format variance."
 agent: knowledge-synthesizer
 ---
 
@@ -24,6 +24,7 @@ Summon KnowledgeSynthesizer — the knowledge engine. Generates research-grade, 
 | `@brief` | Overview with key points | ~500 words |
 | `@guide` | Step-by-step with examples | ~1,000 words |
 | `@deep` | Multi-section comprehensive analysis | ~3,000 words |
+| `@course` | Production-grade curriculum with modules, lessons, learning objectives, assessments, and asset blueprints | Full course architecture |
 | `@compendium` | Full multi-chapter volume | 10,000+ words |
 | `@reference` | Structured definitions, relationships, lookup-ready | ~1,500 words |
 | *(no flag)* | Automatically determined from context | varies |
@@ -76,6 +77,13 @@ Summon KnowledgeSynthesizer — the knowledge engine. Generates research-grade, 
 /knowledge game theory @compendium @variance @playbook
 ```
 
+### Production-Grade Courses
+```
+/knowledge design a complete course on negotiation @course
+/knowledge build a curriculum for persuasion psychology @course @practical
+/knowledge create a self-paced mastery program on game theory @course @variance
+```
+
 ### Full System/Compendium
 ```
 /knowledge I want a complete guide to social dynamics @compendium
@@ -89,6 +97,7 @@ Summon KnowledgeSynthesizer — the knowledge engine. Generates research-grade, 
 | "Explain X" | Quick synthesis | Clear, accurate explanation |
 | "Guide me on X" | Research + synthesis | Step-by-step actionable guide |
 | "Deep dive on X" | Full thinking pipeline | Multi-section comprehensive analysis |
+| "Design a course on X" | Full pipeline + Stage C | Production-grade curriculum with modules, objectives, assessments, assets |
 | "Compendium on X" | Full pipeline + structure | Complete organized volume |
 | "X @variance" | Full pipeline + variance | Multiple versions (depth/perspective/format) |
 
