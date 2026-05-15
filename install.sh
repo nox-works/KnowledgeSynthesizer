@@ -29,6 +29,10 @@ echo "[2.5/5] Installing subagent..."
 mkdir -p "$OPENCODE_DIR/agent/subagents/knowledge"
 cp "$KS_DIR/agent/subagents/knowledge-synthesizer.md" "$OPENCODE_DIR/agent/subagents/knowledge/" && echo "  Subagent installed"
 
+# Step 2.75: Install meta agent
+mkdir -p "$OPENCODE_DIR/agent/meta"
+cp "$KS_DIR/agent/knowledge-synthesizer.md" "$OPENCODE_DIR/agent/meta/knowledge-synthesizer.md" && echo "  Meta agent installed"
+
 # Step 3: Install command file
 echo "[3/5] Installing command..."
 cp "$KS_DIR/command/knowledge.md" "$COMMAND_TARGET/" && echo "  Command installed" || echo "  [WARNING] Command copy failed"

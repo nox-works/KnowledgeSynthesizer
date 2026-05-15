@@ -40,6 +40,11 @@ if not exist "%OPENCODE_DIR%\agent\subagents\knowledge" mkdir "%OPENCODE_DIR%\ag
 copy /Y "%KS_DIR%agent\subagents\knowledge-synthesizer.md" "%OPENCODE_DIR%\agent\subagents\knowledge\" >nul 2>&1
 echo   Subagent installed.
 
+REM --- Step 2.75: Install meta agent (for OpenCode discovery) ---
+if not exist "%OPENCODE_DIR%\agent\meta" mkdir "%OPENCODE_DIR%\agent\meta"
+copy /Y "%KS_DIR%agent\knowledge-synthesizer.md" "%OPENCODE_DIR%\agent\meta\knowledge-synthesizer.md" >nul 2>&1
+echo   Meta agent installed.
+
 REM --- Step 3: Install command file ---
 echo [3/5] Installing command file...
 copy /Y "%KS_DIR%command\knowledge.md" "%COMMAND_TARGET%\" >nul 2>&1
