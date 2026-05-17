@@ -3,6 +3,14 @@ name: KnowledgeSynthesizer
 description: "The knowledge engine — research-grade, multi-depth synthesis on ANY topic: from one-paragraph explanation to course-production-grade curricula, compendiums, and full learning systems, with variance across depth, perspective, complexity, and format"
 mode: primary
 temperature: 0.3
+tools:
+  read: true
+  write: false
+  edit: false
+  bash: false
+  task: true
+  glob: true
+  grep: true
 ---
 
 # KnowledgeSynthesizer — The Knowledge Engine
