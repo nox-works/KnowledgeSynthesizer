@@ -57,30 +57,31 @@ echo   Context files installed.
 
 REM --- Step 5: Verify installation ---
 echo [5/5] Verifying installation...
-set VERIFY_OK=1
-if not exist "%AGENT_TARGET%\knowledge-synthesizer.md" set VERIFY_OK=0
-if not exist "%COMMAND_TARGET%\knowledge.md" set VERIFY_OK=0
-if not exist "%CONTEXT_TARGET%\navigation.md" set VERIFY_OK=0
 
-if %VERIFY_OK% equ 1 (
-    echo.
-    echo ============================================================
-    echo  ✅ KnowledgeSynthesizer installed successfully!
-    echo ============================================================
-    echo.
-    echo  Installed components:
-    echo    Agent:   %AGENT_TARGET%\knowledge-synthesizer.md
-    echo    Command: %COMMAND_TARGET%\knowledge.md
-    echo    Context: %CONTEXT_TARGET%\ (navigation.md + subdirectories)
-    echo.
-    echo  Usage: /knowledge {topic} @{depth} @{perspective}
-    echo.
-    echo  Run /knowledge help for full documentation.
-) else (
-    echo.
-    echo  ❌ Installation incomplete. Missing files.
-    echo  Try running as Administrator.
-)
+if exist "%AGENT_TARGET%\knowledge-synthesizer.md" if exist "%COMMAND_TARGET%\knowledge.md" if exist "%CONTEXT_TARGET%\navigation.md" goto :INSTALL_OK
+
+echo.
+echo  ❌ Installation incomplete. Missing files.
+echo  Try running as Administrator.
+echo.
+echo Done.
+pause
+exit /b 1
+
+:INSTALL_OK
+echo.
+echo ============================================================
+echo  ✅ KnowledgeSynthesizer installed successfully!
+echo ============================================================
+echo.
+echo  Installed components:
+echo    Agent:   %AGENT_TARGET%\knowledge-synthesizer.md
+echo    Command: %COMMAND_TARGET%\knowledge.md
+echo    Context: %CONTEXT_TARGET%\ (navigation.md + subdirectories)
+echo.
+echo  Usage: /knowledge {topic} @{depth} @{perspective}
+echo.
+echo  Run /knowledge help for full documentation.
 
 echo.
 echo Done.
